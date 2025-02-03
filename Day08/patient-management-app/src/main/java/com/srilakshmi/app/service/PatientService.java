@@ -15,9 +15,9 @@ public class PatientService {
         return patient;
     }
 
-    public Patient updatePatient(String id, int newAge) {
+    public Patient updatePatient(String id, String newHospitalName) {
         Patient patient1= patients.get(id);
-        patient1.setAge(newAge);
+        patient1.setHospitalName(newHospitalName);
         return patient1;
     }
 

@@ -25,6 +25,10 @@ public class Patient {
         this.age = age;
     }
 
+    public String getHospitalName(String hospitalName) { return hospitalName; }
+
+    public  void setHospitalName(String hospitalName) { this.hospitalName = hospitalName; }
+
     String id;
     String name;
     String hospitalName;

@@ -21,17 +21,19 @@ public class PatientServiceTest {
         assert expectedPatient.getId()== patient.getId();
         assert expectedPatient.getName()== patient.getName();
         assert expectedPatient.getAge()== patient.getAge();
+        assert expectedPatient.gethospitalName()== patient.gethospitalName();
     }
 
     @Test
     public void testUpdatePatient() {
         Patient patient1 = new Patient("1","Pat1","ABC","Male",25);
         Patient expectedPatient=patientService.createPatient(patient1);
-        Patient resultPatient=patientService.updatePatient(patient1.getId(),30);
+        Patient resultPatient=patientService.updatePatient(patient1.gethospitalName(),"JKL");
         assert resultPatient != null;
         assert resultPatient.getId()== patient1.getId();
         assert resultPatient.getName()== patient1.getName();
-        assert resultPatient.getAge()== 30;
+        assert resultPatient.getAge()== patient1.getAge();
+        assert resultPatient.gethospitalName()== "JKL";
     }
 
     @Test

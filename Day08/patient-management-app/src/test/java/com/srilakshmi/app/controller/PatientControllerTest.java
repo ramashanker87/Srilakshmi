@@ -53,19 +53,20 @@ public class PatientControllerTest {
         Patient resultPatient=patientController.createPatient(patient1);
         assert resultPatient!=null;
         assert resultPatient.getId()==patient1.getId();
-        assert resultPatient.getName().equals("Emp1");
+        assert resultPatient.getName().equals("Pat1");
+        assert resultPatient.gethospitalName().equals("ABC");
         assert resultPatient.getAge()==25;
     }
     @Test
     public void testUpdateEmployees() {
         Patient patient1 = new Patient("1","Pat1","ABC","Male",25);
         Patient patient2 = new Patient("2","Pat2","DEF","Female",26);
-        when(patientService.updatePatient(anyString(),anyInt())).thenReturn(patient2);
-        Patient resultPatient=patientController.updatePatient(patient1.getId(),26);
+        when(patientService.updatePatient(anyString(),anyString())).thenReturn(patient2);
+        Patient resultPatient=patientController.updatePatient(patient1.gethospitalName(),"JKL");
         assert resultPatient!=null;
         assert resultPatient.getId()==patient2.getId();
         assert resultPatient.getName().equals("Pat2");
-        assert resultPatient.getAge()==26;
+        assert resultPatient.gethospitalName()=="JKL";
     }
     @Test
     public void testDeletePatients() {
