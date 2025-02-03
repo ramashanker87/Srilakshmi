@@ -31,9 +31,9 @@ public class PatientControllerTest {
     @Test
     public void testGetAllPatients() {
         Map<String, Patient> patientMap = new HashMap<>();
-        Patient patient1 = new Patient("1","Pat1",25);
-        Patient patient2 = new Patient("2","Pat2",26);
-        Patient patient3 = new Patient("3","Pat3",27);
+        Patient patient1 = new Patient("1","Pat1","ABC","Male",25);
+        Patient patient2 = new Patient("2","Pat2","DEF","Female",26);
+        Patient patient3 = new Patient("3","Pat3","GHI","Male",27);
         patientMap.put(patient1.getId(), patient1);
         patientMap.put(patient2.getId(), patient2);
         patientMap.put(patient3.getId(), patient3);
@@ -48,7 +48,7 @@ public class PatientControllerTest {
 
     @Test
     public void testCreatePatients() {
-        Patient patient1 = new Patient("1","Pat1",25);
+        Patient patient1 = new Patient("1","Pat1","ABC","Male",25);
         when(patientService.createPatient(patient1)).thenReturn(patient1);
         Patient resultPatient=patientController.createPatient(patient1);
         assert resultPatient!=null;
@@ -58,8 +58,8 @@ public class PatientControllerTest {
     }
     @Test
     public void testUpdateEmployees() {
-        Patient patient1 = new Patient("1","Pat1",25);
-        Patient patient2 = new Patient("2","Pat2",26);
+        Patient patient1 = new Patient("1","Pat1","ABC","Male",25);
+        Patient patient2 = new Patient("2","Pat2","DEF","Female",26);
         when(patientService.updatePatient(anyString(),anyInt())).thenReturn(patient2);
         Patient resultPatient=patientController.updatePatient(patient1.getId(),26);
         assert resultPatient!=null;

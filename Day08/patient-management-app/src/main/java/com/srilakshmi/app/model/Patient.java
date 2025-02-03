@@ -34,10 +34,12 @@ public class Patient {
     public Patient() {
     }
 
-    public Patient(String id, String name, int age) {
+    public Patient(String id, String name, String hospitalName, String gender, int age) {
         super();
         this.id = id;
         this.name = name;
+        this.hospitalName = hospitalName;
+        this.gender = gender;
         this.age = age;
     }
 }

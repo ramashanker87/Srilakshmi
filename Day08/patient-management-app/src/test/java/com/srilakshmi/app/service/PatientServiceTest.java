@@ -15,7 +15,7 @@ public class PatientServiceTest {
 
     @Test
     public void testCreatePatient() {
-        Patient patient = new Patient("1","Pat1",25);
+        Patient patient = new Patient("1","Pat1","ABC","Male",25);
         Patient expectedPatient=patientService.createPatient(patient);
         assert expectedPatient != null;
         assert expectedPatient.getId()== patient.getId();
@@ -25,7 +25,7 @@ public class PatientServiceTest {
 
     @Test
     public void testUpdatePatient() {
-        Patient patient1 = new Patient("1","Pat1",25);
+        Patient patient1 = new Patient("1","Pat1","ABC","Male",25);
         Patient expectedPatient=patientService.createPatient(patient1);
         Patient resultPatient=patientService.updatePatient(patient1.getId(),30);
         assert resultPatient != null;
@@ -36,7 +36,7 @@ public class PatientServiceTest {
 
     @Test
     public void testDeletePatient() {
-        Patient patient1 = new Patient("1","Pat1",25);
+        Patient patient1 = new Patient("1","Pat1","ABC","Male",25);
         Patient expectedPatient=patientService.createPatient(patient1);
         patientService.deletePatient(patient1.getName());
         Patient expectedResult=patientService.readPatientByName(patient1.getName());
@@ -45,7 +45,7 @@ public class PatientServiceTest {
     }
     @Test
     public void testReadPatientsBYName() {
-        Patient patient1 = new Patient("1","Pat1",25);
+        Patient patient1 = new Patient("1","Pat1","ABC","Male",25);
         Patient actualPatient=patientService.createPatient(patient1);
         Patient expectedResult=patientService.readPatientByName(patient1.getId());
         assert expectedResult != null;
@@ -55,9 +55,9 @@ public class PatientServiceTest {
     }
     @Test
     public void testReadAllPatients() {
-        Patient patient1 = new Patient("1","Pat1",25);
-        Patient patient2 = new Patient("2","Pat2",26);
-        Patient patient3 = new Patient("3","Pat3",27);
+        Patient patient1 = new Patient("1","Pat1","ABC","Male",25);
+        Patient patient2 = new Patient("2","Pat2","DEF","Female",26);
+        Patient patient3 = new Patient("3","Pat3","GHI","Male",27);
         patientService.createPatient(patient1);
         patientService.createPatient(patient2);
         patientService.createPatient(patient3);

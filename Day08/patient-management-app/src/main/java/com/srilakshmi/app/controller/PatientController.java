@@ -26,6 +26,7 @@ public class PatientController {
     public Map<String, Patient> getAllPatients() {
         return patientService.readAllPatient();
     }
+
     @GetMapping("/get/patient")
     public void getAllPatientByName() {
     }
