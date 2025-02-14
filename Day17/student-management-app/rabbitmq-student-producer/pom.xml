@@ -12,11 +12,12 @@
 	<version>1.0.0</version>
 	<name>rabbitmq-student-producer</name>
 	<description>Demo project for Spring Boot </description>
+
 	<packaging>jar</packaging>
 
 	<dependencies>
 		<dependency>
-			<groupId>com.ajay.app</groupId>
+			<groupId>com.srilakshmi.app</groupId>
 			<artifactId>rabbitmq-student-consumer</artifactId>
 			<version>1.0.0</version>
 		</dependency>
