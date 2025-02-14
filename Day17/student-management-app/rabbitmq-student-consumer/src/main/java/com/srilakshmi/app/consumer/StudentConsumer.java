@@ -22,9 +22,6 @@ public class StudentConsumer {
         return new Jackson2JsonMessageConverter();
     }
 
-    // save the student object received in the queue
-
-
     @RabbitListener(queues ="${rabbitmq.student.queue.name}" )
     public void saveStudent(Student student) {
         logger.info("Received Student object to save: {}", student);
@@ -32,7 +29,6 @@ public class StudentConsumer {
         logger.info("Response: {}", response);
     }
 
-    // Method to delete the student by name received from the queue
     @RabbitListener(queues ="${rabbitmq.queue.name}")
     public void deleteStudent(String studentName) {
         logger.info("Received request to delete Student with name: {}", studentName);

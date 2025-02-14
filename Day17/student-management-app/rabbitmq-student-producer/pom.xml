@@ -12,12 +12,11 @@
 	<version>1.0.0</version>
 	<name>rabbitmq-student-producer</name>
 	<description>Demo project for Spring Boot </description>
-
 	<packaging>jar</packaging>
 
 	<dependencies>
 		<dependency>
-			<groupId>com.prashant.app</groupId>
+			<groupId>com.ajay.app</groupId>
 			<artifactId>rabbitmq-student-consumer</artifactId>
 			<version>1.0.0</version>
 		</dependency>
@@ -26,5 +25,4 @@
 			<artifactId>spring-boot-starter-amqp</artifactId>
 		</dependency>
 	</dependencies>
-
 </project>
