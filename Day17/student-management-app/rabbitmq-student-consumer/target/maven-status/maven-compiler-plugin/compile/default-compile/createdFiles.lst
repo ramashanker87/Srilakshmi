@@ -1,0 +1,5 @@
+com\srilakshmi\app\service\StudentService.class
+com\srilakshmi\app\StudentManagementAppApplication.class
+com\srilakshmi\app\consumer\StudentConsumer.class
+com\srilakshmi\app\model\Student.class
+com\srilakshmi\app\repository\StudentRepo.class
