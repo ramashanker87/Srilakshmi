@@ -1,14 +1,38 @@
 package com.srilakshmi.app.module;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import lombok.*;
+
 import java.time.LocalDateTime;
 
+@Entity
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@ToString
 public class ParkingEnd {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
+
     private String parkingNumber;
     private LocalDateTime startTime;
     private LocalDateTime endTime;
     private  int price;
     private String status;
     private String registrationNumber;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getParkingNumber() {
         return parkingNumber;
@@ -58,14 +82,16 @@ public class ParkingEnd {
         this.registrationNumber = registrationNumber;
     }
 
-    public ParkingEnd(String parkingNumber, LocalDateTime startTime, LocalDateTime endTime, int price, String status, String registrationNumber) {
-        this.parkingNumber = parkingNumber;
-        this.startTime = startTime;
-        this.endTime = endTime;
-        this.price = price;
-        this.status = status;
-        this.registrationNumber = registrationNumber;
+    @Override
+    public String toString() {
+        return "ParkingEnd{" +
+                "id=" + id +
+                ", parkingNumber='" + parkingNumber + '\'' +
+                ", startTime=" + startTime +
+                ", endTime=" + endTime +
+                ", price=" + price +
+                ", status='" + status + '\'' +
+                ", registrationNumber='" + registrationNumber + '\'' +
+                '}';
     }
-
-    public ParkingEnd() {}
 }
